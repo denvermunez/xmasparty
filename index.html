@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Class 11-B Christmas Party — 25 December</title>
+
+  <!-- Internal styling only -->
+  <style>
+    :root{
+      --bg:#7a0b0b;
+      --card:#20060a;
+      --accent:#f7c948;
+      --muted:#dcdfe6;
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:
+      linear-gradient(180deg,#6b0505 0%, #30060a 100%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:24px;
+    }
+
+    .wrap{
+      max-width:920px;
+      margin:0 auto;
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:18px;
+    }
+
+    .brand {
+      background:linear-gradient(135deg,#ff6b6b,#c91818);
+      width:78px;height:78px;border-radius:12px;
+      display:grid;place-items:center;font-weight:800;color:#fff;
+      box-shadow:0 8px 28px rgba(0,0,0,0.6);
+      flex:0 0 78px;
+    }
+
+    header h1{margin:0;font-size:20px;line-height:1}
+    header p{margin:4px 0 0;color:rgba(255,255,255,0.82);font-size:13px}
+
+    /* Poster card */
+    article.poster{
+      background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03));
+      border-radius:18px;
+      padding:18px;
+      display:grid;
+      grid-template-columns: 1fr 320px;
+      gap:18px;
+      align-items:start;
+      border:1px solid rgba(255,255,255,0.03);
+      box-shadow: 0 16px 48px rgba(0,0,0,0.6);
+    }
+
+    nav.topnav{
+      display:flex;
+      gap:10px;
+      margin-bottom:10px;
+      flex-wrap:wrap;
+    }
+    nav.topnav a{
+      color:var(--accent);
+      text-decoration:none;
+      font-weight:700;
+      font-size:13px;
+      background:rgba(255,255,255,0.02);
+      padding:8px 10px;border-radius:10px;
+    }
+
+    main{
+      padding:4px 2px;
+    }
+
+    /* figure + image */
+    figure{
+      margin:0;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.03);
+      background:linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.06));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    figure img{display:block;width:100%;height:auto;max-height:420px;object-fit:cover}
+    figcaption{font-size:13px;color:rgba(255,255,255,0.8);padding:8px 6px;text-align:center}
+
+    /* details */
+    .info{
+      margin-top:12px;
+      display:grid;
+      gap:12px;
+      color:var(--muted);
+    }
+
+    .headline{
+      font-size:36px;
+      margin:0 0 6px 0;
+      color:#fff;
+      letter-spacing:-1px;
+    }
+
+    .sub{
+      margin:0;color:rgba(255,255,255,0.9);font-size:14px;
+    }
+
+    .meta{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      margin-top:6px;
+    }
+    .meta time, .meta span.tag{
+      background:rgba(255,255,255,0.03);
+      padding:8px 12px;border-radius:999px;font-weight:800;color:var(--accent);
+      font-size:13px;
+    }
+
+    section.program{
+      background:var(--glass);
+      padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.02);
+    }
+    ul.program-list{margin:8px 0 0 18px;color:rgba(255,255,255,0.9)}
+
+    /* aside */
+    aside{
+      padding:14px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+      border:1px solid rgba(255,255,255,0.03);
+    }
+    .rsvp{
+      display:flex;flex-direction:column;gap:10px;margin-top:8px;
+    }
+    .btn{
+      display:inline-block;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:800;text-align:center;
+    }
+    .btn.primary{background:linear-gradient(90deg,#ff6b6b,#ff8a80);color:#fff;}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--accent)}
+
+    dl{margin:0}
+    dt{font-weight:700}
+    dd{margin:4px 0 12px 0;color:var(--muted)}
+
+    footer{
+      grid-column:1/-1;
+      margin-top:14px;
+      display:flex;justify-content:space-between;align-items:center;
+      color:rgba(255,255,255,0.75);font-size:13px;
+    }
+
+    @media (max-width:880px){
+      article.poster{grid-template-columns:1fr; padding:14px}
+      figure img{max-height:300px}
+    }
+
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand" aria-hidden="true">11-B</div>
+      <div>
+        <h1>Class 11-B Christmas Party</h1>
+        <p>Food • Fun • Music — all students and guests are welcome</p>
+      </div>
+    </header>
+
+    <article class="poster" aria-labelledby="poster-title">
+      <main>
+        <nav class="topnav" aria-label="Poster quick links">
+          <a href="#details">Details</a>
+          <a href="#program">Program</a>
+          <a href="#rsvp">RSVP</a>
+        </nav>
+
+        <section id="visual">
+          <figure>
+            <!-- local image provided in container (keep path exactly as given) -->
+            <img src="/mnt/data/merry-christmas-party-glass-ball-and-gift-box-for-flyer-brochure-design-on-red-background-invitation-theme-concept-happy-holiday-greeting-banner-and-2KE9JFN.jpg"
+                 alt="Christmas ornaments, gifts and candy cane on red background">
+          </figure>
+          <figcaption>Holiday poster artwork — Class 11-B</figcaption>
+        </section>
+
+        <section id="details" class="info" aria-labelledby="poster-title">
+          <h2 id="poster-title" class="headline">Christmas Party — You're invited!</h2>
+          <p class="sub">Join classmates for an evening of games, songs, treats, and a movie to close the night.</p>
+
+          <div class="meta" aria-hidden="false">
+            <time datetime="2025-12-25T18:00">25 December 2025 • 6:00 PM</time>
+            <span class="tag" title="Venue">Room 204, Main Building</span>
+            <span class="tag" title="Host">Hosted by Class 11-B Officers</span>
+          </div>
+
+          <section id="program" class="program" aria-labelledby="program-h">
+            <h3 id="program-h" style="margin:0 0 6px 0;color:#fff">Program highlights</h3>
+            <ul class="program-list">
+              <li>6:30 PM — Caroling & Karaoke</li>
+              <li>7:15 PM — Secret Santa (optional)</li>
+              <li>8:00 PM — Games & Prizes</li>
+              <li>8:45 PM — Photo booth & yearbook snapshots</li>
+              <li>9:00 PM — Movie chill-down</li>
+            </ul>
+          </section>
+        </section>
+
+        <footer>
+          <div>Bring your ID for check-in • Ugly sweaters encouraged!</div>
+          <div style="opacity:0.95">Potluck items or ₱100 contribution welcome</div>
+        </footer>
+      </main>
+
+      <aside id="rsvp" aria-labelledby="rsvp-h">
+        <h3 id="rsvp-h" style="margin:0 0 8px 0;color:#fff">RSVP & Contact</h3>
+
+        <p style="margin:0 0 6px 0;color:var(--muted)">Please RSVP so we can prepare food and seating. Deadline: <time datetime="2025-12-10">10 Dec 2025</time>.</p>
+
+        <div class="rsvp" role="group" aria-label="RSVP options">
+          <a class="btn primary" href="mailto:class11b.rsvp@example.edu?subject=RSVP%20-%20Class%2011B%20Christmas%20Party">
+            RSVP by Email
+          </a>
+          <a class="btn ghost" href="#" onclick="alert('RSVP form coming soon — contact the class officers.'); return false;">
+            Quick RSVP (placeholder)
+          </a>
+        </div>
+
+        <hr style="border:none;border-top:1px solid rgba(255,255,255,0.03);margin:12px 0">
+
+        <dl>
+          <dt>Contact</dt>
+          <dd>
+            <address style="font-style:normal;">
+              Ms. Reyes (Teacher/Advisor)<br>
+              email: <a href="mailto:class11b.teacher@example.edu" style="color:var(--accent);text-decoration:underline">class11b.teacher@example.edu</a><br>
+              Class Officers: Anna Cruz • +63 912 345 6789
+            </address>
+          </dd>
+
+          <dt>Notes</dt>
+          <dd>
+            Parking at East Lot (first-come). Allergy-friendly table available. Guests must follow school policies.
+          </dd>
+        </dl>
+      </aside>
+    </article>
+  </div>
+</body>
+</html>
